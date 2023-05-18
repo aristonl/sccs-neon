@@ -1,0 +1,17 @@
+NEON Source tree
+================
+
+Here's an overview of the source tree:
+
+	doc/ - User and Developer documentation
+	man/ - Man page sources
+	src/ - Actual source code of NEON.
+	COPYING.SHA1 - Copyright/License for the SHA1 Library
+	COPYRIGHT - Copyright/License information
+	HACKING - Contributing information
+	IDEAS - Random ideas for NEON
+	INSTALL - Installation Information
+	Makefile - The top-level Makefile for NEON
+	README - The project README file
+	TREE - This file
+	TASKS - NEON's todo list

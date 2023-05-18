@@ -1,0 +1,69 @@
+
+                    NEON - a simple file revision tracker
+	             Copyright (c) 2023 Ariston Lorenzo.
+
+         Portions Copyright (c) 1995-1999 Cryptography Research Inc.
+                  See COPYING.SHA1 for copying conditions.
+
+  This software is open source software; you can modify it and/or distribute
+  it under the terms of the BSD 3-Clause License (Modified BSD License) as
+  published with the distribution of this software, or (at your option), the
+  GNU General Public License version 2.
+
+  This program is distributed WITHOUT ANY WARRANTY; without even the implied
+  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  BSD 3-Clause License or GNU General Public License v2 for more details.
+
+  You should have recieved a copy of the GNU General Public License and the
+  BSD 3-Clause License with this program. If not, see the following pages:
+
+          <https://www.gnu.org/licenses/>.
+          <https://opensource.org/license/bsd-3-clause/>.
+
+------------------------------------------------------------------------------
+
+WHAT IS NEON:
+
+NEON is a project revision tracker built in C for a UNIX environment. It takes
+queues from many other version control systems like Git, BitKeeper (SCCS), CVS
+(RCS), and others. Project is developed and maintained by Ariston Lorenzo.
+
+------------------------------------------------------------------------------
+
+INSTALLING:
+
+Read the INSTALL file for more instructions.  Basic installation:
+
+        $ make
+        $ make install
+
+Yes, it's that simple.
+
+------------------------------------------------------------------------------
+
+MAILING LISTS:
+
+I setup the following mailing list for development and users of NEON itself.
+Not sure what kind of volume this list will get and I'm not too happy about
+using Google to host this thing but it'll work for now.
+
+        neon-vcs@googlegroups.com
+
+Any security related issues can be sent to me directly:
+
+	me@ariston.dev
+
+------------------------------------------------------------------------------
+
+Credits:
+
+The NEON program is written by Ariston Lorenzo <me@ariston.dev>.
+
+Paul Kocher of Cryptography Research Inc. developed the SHA-1 library used
+on NEON and made it available through the GNU General Public License v2 as
+well as the Mozilla Public License.
+
+------------------------------------------------------------------------------
+
+						Ariston Lorenzo
+						me@ariston.dev

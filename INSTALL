@@ -1,0 +1,17 @@
+                              Neon Installation
+		              =================
+
+              +-----------------------------------------------+
+              | This code is in a *pre-alpha* state. Don't    |
+              | even try to think about using Neon for very   |
+              | critical data.                                |
+              +-----------------------------------------------+
+
+To build NEON, it just follows the simple 'make' and 'make install', and that
+just installs NEON into your ~/bin/ directory. You can also do a global
+installation like so:
+
+	$ make PREFIX=/usr install
+	$ # or PREFIX=/usr/local
+
+NEON currently has no dependencies.
