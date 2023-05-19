@@ -1,17 +1,79 @@
-.TH NEON 1 "18 May 23"
-.SH NAME
+.\" Copyright (c) 2021, 2022, 2023
+.\" Ariston Lorenzo <me@ariston.dev>. All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 3. Neither the name of the copyright holder nor the names of its 
+.\"    contributors may be used to endorse or promote products derived from
+.\"    this software without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS ``AS IS''
+.\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\"	@(#) $Id: neon.1,v 1.2 2023/05/19 14:11:41 atl Exp $
+.\"
+.Dd May 19, 2023
+.Dt NEON 1
+.Sh NAME
 neon \- A simple project revision tracker
-.SH SYNOPSIS 
-.TP
-\fbneon\fp [command] [arguments]
-.SH DESCRIPTION
-NEON is a package of programs to track revisions within a file and/or project.
-It's usually meant for source code management but it can also be used on any
-ASCII text files.
-.SH AUTHOR
+.Sh SYNOPSIS 
+.Nm neon
+.Op Fl h
+.Op Fl v
+.Ar command
+.Op flags
+.Op Ar
+.Sh DESCRIPTION
+.Nm NEON
+is the front end to the
+.Li NEON
+project revision tracker programs.
+NEON is a project revision tracker built in C for a UNIX environment. It takes
+queues from many other version control systems like Git, BitKeeper (SCCS), CVS
+(RCS), and others.
+
+This wrapper program lets you run each NEON program under one program.
+Flags to be passed to 
+.Nm neon
+should be put first before the
+.Ar command
+argument.
+Flags to be passed to actual
+.Li NEON
+program comes after the 
+.Ar command
+argument.
+.Sh OPTIONS
+.Pp
+\-h
+   Prints the usage of the
+.Nm neon
+command.
+.Re
+.Pp
+\-v
+   Prints the version information of the whole
+.Nm NEON
+suite.
+.Sh AUTHOR
 NEON was written by Ariston Lorenzo.
-Copyright (c) 2023 Ariston Lorenzo. All rights reserved.
+Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights reserved.
 See the source tree for more information.
-.SH BUGS
+.Sh BUGS
 Most features of modern version control systems aren't implemented yet and
 current functions may not work as expected.
