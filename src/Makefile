@@ -1,4 +1,4 @@
-#   $Id: Makefile,v 1.2 2023/05/18 14:33:02 atl Exp $
+#   $Id: Makefile,v 1.3 2023/05/19 13:19:45 atl Exp $
 
 PROG=neon neon-init-db neon-write-cache neon-read-cache
 NEON_VERSION=v0.1-devel
@@ -28,7 +28,7 @@ neon-read-cache: read_cache.o
 	$(Q) $(CC) -o $@ read_cache.o $(CFLAGS)
 
 install: neon
-	$(Q) $(MAKE) -C templates install
+	$(Q) cp $(PROG) ~/bin/
 	
 
 shatest: sha1.o shatest.o
