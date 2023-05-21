@@ -1,7 +1,0 @@
-# Object Files
-*.o
-
-# Binaries
-neon-init-db
-neon-cache
-shatest
