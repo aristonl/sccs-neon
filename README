@@ -1,5 +1,5 @@
 
-                    NEON - a simple file revision tracker
+                      NEON - a project revision tracker
 	             Copyright (c) 2023 Ariston Lorenzo.
 
          Portions Copyright (c) 1995-1999 Cryptography Research Inc.
@@ -68,4 +68,4 @@ well as the Mozilla Public License.
 						Ariston Lorenzo
 						me@ariston.dev
 
-Last Modified: $Id: README,v 1.2 2023/05/18 14:32:53 atl Exp $
+Last Modified: $Id: README,v 1.3 2023/05/24 04:42:13 atl Exp $
