@@ -44,7 +44,7 @@ static const char copyright[] =
 
 #if 0
 #ifndef lint
-static char rcsid[] = "@(#) $Id: neon.c,v 1.3 2023/05/19 13:21:30 atl Exp $";
+static char rcsid[] = "@(#) $Id: neon.c,v 1.4 2023/05/27 23:32:41 atl Exp $";
 #endif /* not lint */
 #endif
 
@@ -75,6 +75,14 @@ static char rcsid[] = "@(#) $Id: neon.c,v 1.3 2023/05/19 13:21:30 atl Exp $";
  */
 
 int
+version(void)
+{
+	printf("NEON version %s\n\n", NEON_VERSION);
+	printf("Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights resevred.\n");
+	return 0;
+}
+
+int
 main(argc, argv)
 	int argc;
 	char *argv[];
@@ -87,15 +95,14 @@ main(argc, argv)
 	while ((ch = getopt(argc, argv, "hv")) != -1) {
 		switch (ch) {
 		case 'h':
-			printf(usage);
+			printf("%s", usage);
 			break;
 		case 'v':
-			printf("NEON version %s\n", NEON_VERSION);
-			printf("Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights reserved.\n");
+			version();
 			break;
 		default:
 		case '?':
-			printf(usage);
+			printf("%s", usage);
 			break;
 		}
 	}
