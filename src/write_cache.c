@@ -1,4 +1,3 @@
-/*  $Id: write_cache.c,v 1.2 2023/05/18 14:33:02 atl Exp $  */
 /*
  * NEON - A simple project revision tracker
  *
@@ -41,6 +40,19 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
+
+#ifndef lint
+static const char copyright[] =
+"@(#) Copyright (c) 2021, 2022, 2023\n\
+	Ariston Lorenzo. All rights reserved.\n";
+#endif /* not lint */
+
+#if 0
+#ifndef lint
+static char rcsid[] = "@(#) $Id: write_cache.c,v 1.3 2023/05/28 22:04:30 atl Exp $";
+#endif /* not lint */
+#endif
+
 
 static int
 get_number_of_entries(void)
@@ -91,12 +103,9 @@ update_num_of_entries(num)
 #endif
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+write_cache(path)
+	char *path;
 {
-	char *path = argv[1];
-
 	/* Prepare the new_entry_count before hand */
 	unsigned int entry_count = get_number_of_entries();
 	unsigned int new_entry_count = entry_count + 1;
@@ -187,7 +196,7 @@ main(argc, argv)
 	fp = fopen(".projdir/cache", "a");
 	if (fp == NULL) {
 		printf("Error opening cache file");
-		return 1;
+		return 1; 
 	}
 
 	fwrite(buf, entry_size, 1, fp);
@@ -198,6 +207,49 @@ main(argc, argv)
 
 	printf("write_cache: %s written to cache\n", path);
 	printf("write_cache: Number of entries: %u\n", new_entry_count);
+
+	return 0;
+}
+
+int
+version(void)
+{
+	printf("NEON version %s\n\n", NEON_VERSION);
+	printf("Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights resevred.\n");
+	return 0;
+}
+
+
+int
+main(argc, argv)
+	int argc;
+	char *argv[];
+{
+	static char usage[] = "Usage: neon-write-cache [-dhv] <file>\n";
+	int ch;
+
+	while ((ch = getopt(argc, argv, "dhv")) != -1) {
+		switch (ch) {
+		case 'd':
+#define DEBUG
+			break;
+		case 'h':
+			printf("%s", usage);
+			break;
+		case 'v':
+			version();
+			break;
+		default:
+		case '?':
+			printf("%s", usage);
+			break;
+		}
+	}
+
+	if (argv[1] == NULL) {
+		printf("%s", usage);
+		return 1;
+	}
 
 	return 0;
 }
