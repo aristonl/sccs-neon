@@ -38,15 +38,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifndef lint
-static const char copyright[] =
-"@(#) Copyright (c) 2021, 2022, 2023\n\
-        Ariston Lorenzo. All rights reserved";
-#endif /* not lint */
-
 #if 0
 #ifndef lint
-static char rcsid[] = "@(#) $Id: cache.h,v 1.3 2023/06/07 16:06:44 atl Exp $"
+static char rcsid[] = "@(#) $Id: cache.h,v 1.4 2023/06/07 16:08:09 atl Exp $"
 #endif /* not lint */
 #endif
 
