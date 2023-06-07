@@ -1,4 +1,3 @@
-/*  $Id: cache.h,v 1.2 2023/05/18 14:33:02 atl Exp $  */
 /*
  * NEON - A simple project revision tracker
  *
@@ -38,6 +37,18 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#ifndef lint
+static const char copyright[] =
+"@(#) Copyright (c) 2021, 2022, 2023\n\
+        Ariston Lorenzo. All rights reserved";
+#endif /* not lint */
+
+#if 0
+#ifndef lint
+static char rcsid[] = "@(#) $Id: cache.h,v 1.3 2023/06/07 16:06:44 atl Exp $"
+#endif /* not lint */
+#endif
 
 /*
  * Structs for the project cache
