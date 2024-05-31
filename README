@@ -10,3 +10,22 @@ This code is still under development.
  See COPYRIGHT for copyright information.
  See HACKING for development information.
  See INSTALL for installation information.
+
+A rough guide to the source tree:
+
+ docs/
+    User and developer documentation.
+ docs/atl/
+    Ariston's notes.
+ docs/licenses
+    Full-text copies of licenses used in this project
+ neon/
+    Source code to neon itself
+ neon/build/
+    Build directory for neon
+ neon/script/
+    Scripts to build neon (and other stuff possibly)
+ neon/templates/
+    Templates for config files, etc..
+ plan/
+    Planning files for neon.
