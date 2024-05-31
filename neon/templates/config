@@ -1,0 +1,33 @@
+# This is the default configuration file for this NEON project.
+#
+# Make sure to fill in the 'Name', 'Description', 'Owner', and 'License'
+# fields.
+
+#
+# Set the title of the project.
+#
+# default: name of the project folder
+#
+Name:
+
+#
+# The description of the project.
+#
+# default: none
+#
+Description:
+
+#
+# Owner/Main Author of the project. Usually in the style of
+# 'John Doe <johnd@email.com>'.
+#
+# default: none
+#
+Owner:
+
+#
+# The project license. Use the SPDX-License-Identifier here,
+#
+# default: none
+#
+License: 

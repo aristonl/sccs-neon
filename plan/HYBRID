@@ -1,0 +1,65 @@
+Centralized Aspects:
+
+    Depot-Centric Organization:
+        Neon features a depot-centric organization where depots act as central
+        repositories containing multiple projects.
+        
+        This centralized structure facilitates efficient organization and
+        management of projects within a unified system.
+
+    Centralized Access Control:
+        Neon employs centralized access control mechanisms to regulate user
+        permissions and ensure the security of repository data.
+        
+        Permissions for read, write, and execute operations are managed
+        centrally, allowing administrators to enforce access policies.
+
+    Depot-wide Versioning:
+        Versioning within Neon occurs at the depot level, allowing for
+        centralized tracking of changes across all projects within a depot.
+        
+        This centralized versioning model simplifies the management of project
+        histories and facilitates repository-wide operations such as branching
+        and merging.
+
+Distributed Aspects:
+
+    Project-Centric Development:
+        Despite its depot-centric structure, Neon supports project-centric
+        development by allowing users to work with individual projects within
+        a depot.
+        
+        Users can clone specific projects from a depot to their local machines,
+        enabling decentralized development workflows.
+
+    Offline Work and Collaboration:
+        Neon enables offline work and collaboration through distributed copies
+        of projects.
+        
+        Users can clone projects locally, make changes offline, and later
+        synchronize their changes with the central depot, fostering
+        decentralized collaboration.
+
+    Peer-to-Peer Communication:
+        Neon facilitates peer-to-peer communication between distributed copies
+        of projects, enabling direct collaboration between users.
+        
+        Users can exchange changesets, patches, or diffs with peers, allowing
+        for seamless collaboration without relying solely on a central server.
+
+    Branching and Merging:
+        Neon supports distributed branching and merging operations, empowering
+        users to work on independent branches and merge changes locally.
+        
+        Users can manage branching and merging operations within their local
+        copies of projects, promoting decentralized development workflows.
+
+Integration of Centralized and Distributed Models:
+
+    Neon seamlessly integrates centralized and distributed features, offering
+    users the flexibility to choose the most suitable workflow for their
+    projects.
+    
+    By combining elements of both models, Neon provides a versatile version
+    control solution that accommodates various development scenarios, from
+    centralized team collaboration to decentralized individual projects.

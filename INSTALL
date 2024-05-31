@@ -1,0 +1,18 @@
+
+                          Neon M1 Installation
+                          ====================
+
+NOTE: this is PRE-ALPHA code. Don't use it on real data, except for
+Neon itself.
+                        
+-----------------------------------------------------------------------
+
+Neon uses a custom 'build' script:
+
+	$ cd neon
+    $ ./build all
+    $ ./build install
+
+PREREQUISITES:
+
+Email me@ariston.dev if you have any problems.

@@ -1,0 +1,39 @@
+			-*- outline -*-
+
+This is just the main 'TODO' file of NEON. This exists mainly to
+keep track of where the project is supposed to be and what I
+should be working on. Please feel free to work on anything that
+isn't being currently worked on.
+
+These tasks will also be mirrored on GitHub for easy web viewing
+and collaboration.
+
+Key:
+    (N): Not done. No work currently being done.
+    (W): Not done. Work is currently being done.
+    (D): Done.
+
+Quick overview of the format:
+
+* 1 (N): Work on N/A.
+
+	Description.
+
+----------------------------------------------------------------
+
+* 1 (W): Basic Command Functionality
+
+	All we really need at the moment is just to be able to
+	have basic commands (everyday commands) implemented. Not
+	in the 'fully functional' way but in a 'stub' state,
+	meaning you can run the commands but they won't do
+	anything.*
+
+	*: This really only applies to stuff like committing,
+	logs, etc since we haven't figured out the whole file
+	system format yet.
+
+* 3 (D): Work on repository cache
+
+* 4 (D): Create config file when init'ing the project
+

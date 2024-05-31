@@ -1,0 +1,48 @@
+o Getting build information with version info
+
+	On things like VIM, GCC, BitKeeper, etc. they are able to keep
+	build data (like username@hostname of build machine, build date,
+	config, etc) and prints it out when printing version information.
+
+	We could do something like:
+
+		$ neon -v
+		NEON version 0.0.1-devel
+		Copyright (c) 2023 Ariston Lorenzo. All rights reserved.
+		This program is distributed WITHOUT ANY WARRANTY; without
+		even the implied warranty of MERCHANTABILITY or FITNESS
+		FOR A PARTICULAR PURPOSE.  See the file COPYRIGHT in the
+		source for more information.
+
+		Built by: atl@osaka.ariston.dev
+		Build Date: Mon May 15 05:30:57 PM EDT 2023
+	
+	The way I know that BitKeeper does is that it keeps a file
+	along with the binary that has that information, which I could
+	probably do, but I think it'd be better if I embedded that info
+	into the actual source itself.
+
+	The only downside is that I can't UNIX-ify the source (see next
+	entry) so we'll see what we can do to get this going.
+
+o UNIX-ifing the source
+
+	The UNIX philosophy states that instead of having programs
+	that are big that tackles are large goal that is comprised
+	of little goals should be spread out into programs that
+	achieve those 'little goals' and use those together.
+
+	I plan on doing this with the source and handling the main
+	'neon' command just through a shell script that calls each
+	executables (think like SCCS or early Git).
+
+o ID Keywords (RCS/SCCS)
+
+o File storage and file editing
+
+	Basically every file will be available for reading (unless you
+	checked out only a certain project or file) but you will need
+	to run the 'neon-edit' program to edit the file. This changes
+	the permissions to "read" and also creates a copy of the file
+	before changes were made in a separate "commit" folder so it
+	can create the diff.

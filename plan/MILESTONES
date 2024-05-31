@@ -1,0 +1,60 @@
+Milestone 1: Core Functionality (Foundation)
+
+    Goals:
+        Implement core version control functionality, including repository initialization, file tracking, and basic commit operations.
+        Establish the foundational data model for depots, projects, and version history.
+
+Milestone 2: Depot Management
+
+    Goals:
+        Develop functionalities for creating, listing, and managing depots.
+        Implement basic project management operations within depots.
+
+Milestone 3: User Authentication and Access Control
+
+    Goals:
+        Integrate user authentication mechanisms for secure access to depots and projects.
+        Implement access control lists (ACLs) to regulate user permissions.
+
+Milestone 4: Basic Command-Line Interface (CLI)
+
+    Goals:
+        Create a basic command-line interface for interacting with Neon.
+        Implement essential commands for depot and project management, file tracking, and commits.
+
+Milestone 5: Partial Checkout and Editing
+
+    Goals:
+        Implement partial checkout functionality, allowing users to clone specific files or projects.
+        Develop the neon-edit tool for editing files within the version control system.
+
+Milestone 6: Email-Patch Integration
+
+    Goals:
+        Enable submission and processing of patches via email for collaborative development.
+        Implement mechanisms for applying email patches to depots and projects.
+
+Milestone 7: Distributed Features
+
+    Goals:
+        Implement distributed features such as cloning, offline work, and synchronization.
+        Develop conflict resolution strategies for handling conflicts during synchronization.
+
+Milestone 8: User Interface (UI)
+
+    Goals:
+        Design and develop a user-friendly command-line interface for interacting with Neon.
+        Create intuitive screens and controls for performing version control operations.
+
+Milestone 9: Testing and Refinement
+
+    Goals:
+        Conduct thorough testing of implemented functionalities to ensure reliability and stability.
+        Gather feedback from users and stakeholders for iterative refinement.
+
+Milestone 10: Documentation and Deployment (First Release)
+
+    Goals:
+        Create comprehensive documentation for Neon, including user guides and developer documentation.
+        Prepare Neon for deployment in production environments.
+        Release the first version of Neon to users.

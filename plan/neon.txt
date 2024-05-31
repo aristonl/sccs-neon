@@ -1,0 +1,67 @@
+
+     NEON: A version control system for the normal person
+     ----------------------------------------------------
+     $Id$
+
+* Intro
+
+This document will cover NEON, a new version control system used
+at N11.  It will be described using similarities and differences
+from multiple different version control systems (including CVS,
+Git, BitKeeper, SCCS).   If you don't know (at least) the basics
+of these version controls systems work, this document will be
+pretty unreadable.
+
+* Goals
+
+** Version numbers are project-wide and atomic.
+
+Like most distributed systems, each Neon revision results in a
+full project update, rather than how centralized systems track
+revisions on a file-by-file basis.
+
+Commits are atomic -- meaning that either the entire commit was
+able to be committed to the tree, or it didn't and it'll be
+reverted and you'll have to fix the issue yourself.
+
+** Any directory or file metadata changes are versioned.
+
+This is common sense but some version control systems just don't
+have this at all.
+
+This also includes things like file/directory permissions,
+renames, etc..  Rename support means you can trace a file's
+history even through renames. For example, you ask for revision
+15 of a file named 'bar.c', but it was named 'foo.c' at rev. 12.
+
+** Depots and Projects are a thing.
+
+Now the way they work is a bit different than what you think.
+
+Projects are the basic foundation in Neon and work as a normal
+repository. Depots are basically just a collection of projects
+under one larger project.  This allows for version history of
+projects to be monitored as part of a whole larger project.
+Projects don't also have to belong to a specific depot but it
+can be imported as a project.
+
+[TODO: work on this -atl]
+
+** The patch workflow is supported.
+
+Neon natively uses the patch workflow using email. With gitserv,
+it allows the patch workflow to be off of email and in a more
+user friendly service while also having access to mailing lists.
+(More info in gitserv). 
+
+
+* Implementation
+
+** Allows for client->client/single client
+
+Clients can also act as servers themselves meaning people can
+work off of their tree easily. You can also clone 
+
+Neon allows for checking out specific parts of projects/depots
+for people who are only making a small change on one file that
+they know does not need testing.  

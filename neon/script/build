@@ -1,0 +1,84 @@
+#!/bin/sh
+
+PROG="neon neon-init-db neon-write-cache neon-read-cache"
+NEON_VERSION="v0.1-devel"
+
+CC="gcc"
+CFLAGS="--std=c89 -O2 -g -pedantic -DNEON_VERSION=\"$NEON_VERSION\""
+
+E() {
+	echo "$1"
+}
+
+buildstep() {
+    NAME=$1
+    shift
+    "$@" 2>&1 | sed $'s|^|\x1b[34m['"${NAME}"$']\x1b[39m |'
+}
+
+all() {
+	compile_objects
+	for p in $PROG; do
+		make_prog "$p"
+	done
+}
+
+compile_objects() {
+	while IFS= read -r src_file; do
+		obj_file="${src_file%.c}.o"
+		compile_c_file "$src_file" "$obj_file"
+	done < SOURCES
+}
+
+compile_c_file() {
+	src_file="$1"
+	obj_file="$2"
+	buildstep "compile" $CC $CFLAGS -c "$src_file" -o "build/obj/$obj_file"
+}
+
+make_prog() {
+	prog="$1"
+	obj=$(get_objs "$prog")
+	buildstep "linking" $CC -o "build/bin/$prog" $obj $CFLAGS
+
+}
+
+get_objs() {
+	prog="$1"
+	case "$prog" in
+		neon) echo "build/obj/neon.o" ;;
+		neon-init-db) echo "build/obj/init-db.o";;
+		neon-write-cache) echo "build/obj/write_cache.o build/obj/sha1.o" ;;
+		neon-read-cache) echo "build/obj/read_cache.o" ;;
+		*) ;;
+	esac
+}
+
+install() {
+	mkdir -p ~/bin
+	for p in $PROG; do
+		if [ -f "$p" ]; then
+			buildstep "install" E cp "$p" ~/bin/
+		fi
+	done
+}
+
+shatest() {
+	compile_prog shatest
+}
+
+clean() {
+	buildstep "clean" rm -rf build/bin/$PROG build/bin/shatest build/obj/*.o
+}
+
+# Build process
+case "$1" in
+	all) all ;;
+	install) install ;;
+	shatest) shatest ;;
+	clean) clean;;
+	*)
+		E "Usage: $0 {all|install|shatest|clean}"
+		exit 1
+		;;
+esac

@@ -1,0 +1,19 @@
+CONTRIBUTING TO NEON
+====================
+
+* Coding Style
+
+The coding style used in NEON is the 'Kernel Normal Form' from the BSD's mixed
+with the Linux coding style.
+
+* Patches
+
+In your patch, you should include a ChangeLog entry and a patch description.
+You should still keep atomic commits in mind and make separate logical patches
+and entries. Make sure you also *TEST* your patch before submission.
+
+Note that submitting you patch means that your changes can be distributed
+under the GNU GPLv2 and/or the BSD 3-Clause. Changes can be submitted to:
+	<neon-vcs@googlegroups.com>
+
+See docs/patchwork on how to actually create patches.

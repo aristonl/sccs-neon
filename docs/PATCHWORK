@@ -1,0 +1,92 @@
+PATCHWORK WITH NEON
+===================
+
+This document is a modified version of the PATCHWORK document I wrote for
+Link.
+
+I. SET UP YOUR ENVIRONMENT
+
+	Grab the tarball of the release you are targeting your 
+	patch towards from the ariston.dev FTP server.
+
+	Usually, you will end up editing multiple files (if not,
+	skip this section) so you should extract the tarball into
+	two separate folders; one for development and the other
+	as a vanilla tree so we can use it to compare against.
+
+		$ gzip -cd neon-mile1.tar.gz | tar xvf
+		$ mv neon-mile1 neon-devel
+		$ gzip -cd neon-mile1.tar.gz | tar xvf
+		$ mv neon-mile1 neon-vanilla
+
+	To update the folders upon a new version release, you'll
+	need to delete the old neon-devel folder and get the
+	patch file from the FTP server (which will be named like:
+	patch-mile2) and apply it to neon-vanilla like so:
+
+		$ rm -rf neon-devel
+		$ cd neon-vanilla && patch -p1 -ipatch-mile2
+		$ cd ../ && cp -r neon-vanilla/ neon-devel/
+
+	If you only need to modify a single file, just do:
+
+		$ cp $MYFILE $MYFILE.orig
+		$ vi $MYFILE
+
+II. UPDATING THE CHANGELOG
+
+	The changelog format is something along the lines of this:
+
+	Author: John Doe <john.doe@n11.dev>
+	Date: # Insert date from 'date' command
+	
+	Added new command # basically just the commit title
+
+	# Give a description of the whole change
+	This new command does xyz.
+
+	# Then give in-depth details on what has changed in each file
+	* neon.c: Added new command to command parser
+	* new-command.c: new file
+
+III. MAKING THE PATCH FILE
+
+	If you only edited a single file and created the .orig copy, 
+	you can just do:
+
+		$ diff -up $MYFILE{.org,} > patch
+
+	If you did multiple files and you have the vanilla source tree,
+	you need to do:
+
+		$diff -uprN neon-vanilla neon-devel > neon-devel/patch
+
+IV.  EDITING AND SENDING THE PATCH FILE
+
+	To send your patch correctly, you will need to add certain
+	email headers to your patch file or add them through your
+	SMTP program of choice.
+
+	The subject of the email should be:
+
+		Subject: [PATCH neon] <commit/changelog entry name>
+
+	Then edit your patch file to include the changelog entry
+	description and your 'Signed-off-by', like so:
+
+		# continuing to use the example from earlier
+		This new command does xyz.
+
+		* neon.c: Added new command to command parser
+		* new-command.c: new file
+
+		Signed-off-by: John Doe <john.doe@n11.dev>
+
+		---
+
+		<actual patch diff starts here>
+
+	You can then use your SMTP program of choice to send it.
+	I recommend seeing EmailClients.rst in the Linux source tree
+	in the Documentation/process directory for more info on email
+	clients.

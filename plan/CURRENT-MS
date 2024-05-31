@@ -1,0 +1,7 @@
+1. Data models
+	get basic schemas for depots, projects, file info, revisions, etc
+
+2. depot and project inits
+	figure out directory structures and metadata files
+
+3. file tracking and revision ops
