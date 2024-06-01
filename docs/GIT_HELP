@@ -1,0 +1,18 @@
+Neon GIT Access:
+
+To access the GIT source code repository, clone from n11.dev:
+
+	$ git clone git://n11.dev/neon/src.git
+
+If you have committer access to the repository, then use SSH:
+
+	$ git clone ssh://user@n11.dev:23231/neon/src.git
+
+Just replace "user" with your own requested username and use
+your password.
+
+To contribute changes, email a patch to the development mailing
+list:
+
+	<neon-vcs@googlegroups.com>
+	
