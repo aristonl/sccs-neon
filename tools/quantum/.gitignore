@@ -1,0 +1,23 @@
+# Ninja Build files
+build.ninja
+rules.ninja
+.ninja_deps
+.ninja_log
+
+# CMake
+.cmake/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# JetBrains
+.idea/
+Testing/
+
+# Build folder
+build/
+
+# gitserv binary
+gitserv
+
+.DS_Store
