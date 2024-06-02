@@ -70,9 +70,7 @@ struct cache_entry {
 int write_cache(char* path);
 int read_cache(void);
 
-int
-verify_header(void)
-{
+int verify_header(void) {
 	FILE *fp;
 
 	struct cache_header header;

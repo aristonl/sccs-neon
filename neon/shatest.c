@@ -37,12 +37,6 @@ static const char copyright[] =
 	Ariston Lorenzo. All rights reserved.";
 #endif /* not lint */
 
-#if 0
-#ifndef lint
-static char rcsid[] = "@(#) $Id: shatest.c,v 1.1.1.1 2024/05/30 13:38:05 atl Exp $"
-#endif /* not lint */
-#endif
-
 #include "sha1.h"
 
 #include <stdio.h>

@@ -1,7 +1,7 @@
 /*
  * NEON - A simple project revision tracker
  *
- * Copyright (c) 2023 Ariston Lorenzo.
+ * Copyright (c) 2023, 2024 Ariston Lorenzo.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -43,20 +43,11 @@
 
 #ifndef lint
 static const char copyright[] =
-"@(#) Copyright (c) 2021, 2022, 2023\n\
+"@(#) Copyright (c) 2021, 2022, 2023, 2024\n\
 	Ariston Lorenzo. All rights reserved.\n";
 #endif /* not lint */
 
-#if 0
-#ifndef lint
-static char rcsid[] = "@(#) $Id: write_cache.c,v 1.1.1.1 2024/05/30 13:38:05 atl Exp $";
-#endif /* not lint */
-#endif
-
-
-static int
-get_number_of_entries(void)
-{
+static int get_number_of_entries(void) {
 	FILE *fp;
 
 	struct cache_header header;
@@ -76,10 +67,7 @@ get_number_of_entries(void)
 	return num;
 }
 
-static unsigned int
-update_num_of_entries(num)
-	unsigned int num;
-{
+static unsigned int update_num_of_entries(unsigned int num) {
 	FILE *fp;
 
 	struct cache_header header;
@@ -102,10 +90,7 @@ update_num_of_entries(num)
 #define SHA_DIGEST_LENGTH 20
 #endif
 
-int
-write_cache(path)
-	char *path;
-{
+int write_cache(char *path) {
 	/* Prepare the new_entry_count before hand */
 	unsigned int entry_count = get_number_of_entries();
 	unsigned int new_entry_count = entry_count + 1;
@@ -211,20 +196,14 @@ write_cache(path)
 	return 0;
 }
 
-int
-version(void)
-{
+int version(void) {
 	printf("NEON version %s\n\n", NEON_VERSION);
-	printf("Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights resevred.\n");
+	printf("Copyright (c) 2021, 2022, 2023, 2024 Ariston Lorenzo. All rights resevred.\n");
 	return 0;
 }
 
 
-int
-main(argc, argv)
-	int argc;
-	char *argv[];
-{
+int main(int argc, char *argv[]) {
 	static char usage[] = "Usage: neon-write-cache [-dhv] <file>\n";
 	int ch;
 

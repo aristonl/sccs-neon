@@ -1,7 +1,7 @@
 /*
  * NEON - A simple project revision tracker
  *
- * Copyright (c) 2023 Ariston Lorenzo. All rights reserved.
+ * Copyright (c) 2023, 2024 Ariston Lorenzo. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -38,15 +38,9 @@
 
 #ifndef lint
 static const char copyright[] =
-"@(#) Copyright (c) 2021, 2022, 2023\n\
+"@(#) Copyright (c) 2021, 2022, 2023, 2024\n\
 	Ariston Lorenzo. All rights reserved.\n";
 #endif /* not lint */
-
-#if 0
-#ifndef lint
-static char rcsid[] = "@(#) $Id: neon.c,v 1.1.1.1 2024/05/30 13:38:04 atl Exp $";
-#endif /* not lint */
-#endif
 
 /*
  *  neon.c - the front end to the NEON revision system.
@@ -74,19 +68,13 @@ static char rcsid[] = "@(#) $Id: neon.c,v 1.1.1.1 2024/05/30 13:38:04 atl Exp $"
  *	Copyright 2021, 2022, 2023 Ariston Lorenzo.
  */
 
-int
-version(void)
-{
+int version(void) {
 	printf("NEON version %s\n\n", NEON_VERSION);
-	printf("Copyright (c) 2021, 2022, 2023 Ariston Lorenzo. All rights resevred.\n");
+	printf("Copyright (c) 2021, 2022, 2023, 2024 Ariston Lorenzo. All rights resevred.\n");
 	return 0;
 }
 
-int
-main(argc, argv)
-	int argc;
-	char *argv[];
-{
+int main(int argc, char *argv[]) {
 	/* variable definitions */
 	static char usage[] = "Usage: neon [-hv] <command> [<args>]\n";
 	int ch;

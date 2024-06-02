@@ -1,7 +1,7 @@
 /*
  * NEON - A simple project revision tracker
  *
- * Copyright (c) 2023 Ariston Lorenzo.
+ * Copyright (c) 2023, 2024 Ariston Lorenzo.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -43,23 +43,15 @@
 
 #ifndef lint
 static const char copyright[] =
-"@(#) Copyright (c) 2021, 2022, 2023\n\
+"@(#) Copyright (c) 2021, 2022, 2023, 2024\n\
 	Ariston Lorenzo. All rights reserved.";
 #endif /* not lint */
-
-#if 0
-#ifndef lint
-static char rcsid[] = "@(#) $Id: init-db.c,v 1.1.1.1 2024/05/30 13:38:04 atl Exp $"; 
-#endif /* not lint */
-#endif
 
 /*
  * Create the .projdir filesystem/database
  */
 
-int
-init_cache(char *path)
-{
+int init_cache(char *path) {
 	FILE *cache_file = fopen(path, "w");
 	struct cache_header header;
 

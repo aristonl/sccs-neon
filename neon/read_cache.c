@@ -1,8 +1,7 @@
-/*  $Id: read_cache.c,v 1.1.1.1 2024/05/30 13:38:04 atl Exp $  */
 /*
  * NEON - A simple project revision tracker
  *
- * Copyright (c) 2023 Ariston Lorenzo.
+ * Copyright (c) 2023, 2024 Ariston Lorenzo.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -42,9 +41,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-static int
-get_number_of_entries(void)
-{
+static int get_number_of_entries(void) {
 	FILE *fp;
 
 	struct cache_header header;
@@ -71,9 +68,7 @@ get_number_of_entries(void)
 /*
  * List all entries in the cache.
  */
-int
-main(void)
-{
+int main(void) {
 	unsigned int entry_count;
 	FILE *fp;
 	int header_size;
