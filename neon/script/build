@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROG="neon neon-init-db neon-write-cache neon-read-cache"
+PROG="neon"
 NEON_VERSION="v0.1-devel"
 
 CC="gcc"
@@ -25,7 +25,7 @@ all() {
 }
 
 prep_build_dir() {
-	mkdir -p build/obj
+	mkdir -p build/obj/client
 	mkdir -p build/bin
 }
 
@@ -52,10 +52,7 @@ make_prog() {
 get_objs() {
 	prog="$1"
 	case "$prog" in
-		neon) echo "build/obj/neon.o" ;;
-		neon-init-db) echo "build/obj/init-db.o";;
-		neon-write-cache) echo "build/obj/write_cache.o build/obj/sha1.o" ;;
-		neon-read-cache) echo "build/obj/read_cache.o" ;;
+		neon) echo "build/obj/client/*.o" ;;
 		*) ;;
 	esac
 }
@@ -67,6 +64,10 @@ install() {
 			buildstep "install" E cp "$p" ~/bin/
 		fi
 	done
+
+	mkdir -p ~/share/neon/templates
+
+	cp -r templates/* ~/share/neon/templates/.
 }
 
 shatest() {
@@ -74,7 +75,7 @@ shatest() {
 }
 
 clean() {
-	buildstep "clean" rm -rf build/bin/$PROG build/bin/shatest build/obj/*.o
+	buildstep "clean" rm -rf build/bin/$PROG build/bin/shatest build/obj/client/*.o
 }
 
 # Build process

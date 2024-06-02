@@ -32,6 +32,7 @@
  */
 
 #include "cache.h"
+#include "neon.h"
 #include "sha1.h"
 
 #include <arpa/inet.h>
@@ -68,7 +69,7 @@ static int get_number_of_entries(void) {
 /*
  * List all entries in the cache.
  */
-int main(void) {
+int read_cache(void) {
 	unsigned int entry_count;
 	FILE *fp;
 	int header_size;

@@ -32,6 +32,7 @@
  */
 
 #include "cache.h"
+#include "neon.h"
 
 #include <arpa/inet.h>
 #include <linux/limits.h>
@@ -72,13 +73,15 @@ int init_cache(char *path) {
 	return 0;
 }
 
-int
-main(void)
+int init_db(void)
 {
 	char *prefix = getenv("HOME");
 	char *config_template_path = malloc(strlen(prefix) + 32);
+
+	/* template is located at prefix/share/neon/templates/config */
+	sprintf(config_template_path, "%s/share/neon/templates/config", prefix);
+
 	FILE *config_template = fopen(config_template_path, "r");
-	FILE *config_file = fopen(".projdir/config", "w");
 
 	char buffer[1024];
 	size_t bytes_read;
@@ -90,17 +93,17 @@ main(void)
 		exit(1);
 	}
 
-	/* template is located at prefix/share/neon/templates/config */
-	sprintf(config_template_path, "%s/share/neon/templates/config", prefix);
-
 	if (config_template == NULL) {
 		printf("Unable to access repository templates!\n");
 		printf("config_template_path: %s\n", config_template_path);
 		exit(1);
 	}
 
+	FILE *config_file = fopen(".projdir/config", "w");
+
+	/* Check if we can write to the config file */
 	if (config_file == NULL) {
-		printf("Unable to setup project config file.\n");
+		printf("Unable to create config file.\n");
 		exit(1);
 	}
 

@@ -31,10 +31,15 @@
  * SUCH DAMAGE.
  */
 
+#include "neon.h"
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
+
+#include <bits/getopt_core.h>
 
 #ifndef lint
 static const char copyright[] =
@@ -84,15 +89,36 @@ int main(int argc, char *argv[]) {
 		switch (ch) {
 		case 'h':
 			printf("%s", usage);
+			exit(0);
 			break;
 		case 'v':
 			version();
+			exit(0);
 			break;
 		default:
 		case '?':
 			printf("%s", usage);
+			exit(1);
 			break;
 		}
+	}
+
+	/* Check for the command */
+	if (strcmp(argv[optind], "add") == 0 || strcmp(argv[optind], "write-cache") == 0) {
+		/* Usage: neon add <file> */
+		if (argv[optind + 1] == NULL) {
+			printf("Usage: neon add <file>\n");
+			return 1;
+		}
+		write_cache(argv[optind + 1]);
+	} else if (strcmp(argv[optind], "ls") == 0 || strcmp(argv[optind], "read-cache") == 0) {
+		read_cache();
+	} else if (strcmp(argv[optind], "init") == 0 || strcmp(argv[optind], "init-db") == 0) {
+		init_db();
+	} else {
+		printf("Unknown command: %s\n", argv[optind]);
+		printf("%s", usage);
+		return 1;
 	}
 
 	return 0;

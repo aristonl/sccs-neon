@@ -43,4 +43,8 @@ typedef struct {
 	int rev_id;
 } file_rev_table;
 
+int init_db(void);
+int read_cache(void);
+int write_cache(char* path);
+
 #endif /* NEON_H */

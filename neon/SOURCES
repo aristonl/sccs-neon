@@ -1,6 +1,6 @@
-neon.c
-init-db.c
-write_cache.c
-read_cache.c
-sha1.c
-shatest.c
+client/cache.c
+client/neon.c
+client/init-db.c
+client/write_cache.c
+client/read_cache.c
+client/sha1.c

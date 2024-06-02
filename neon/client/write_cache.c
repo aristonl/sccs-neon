@@ -32,6 +32,7 @@
  */
 
 #include "cache.h"
+#include "neon.h"
 #include "sha1.h"
 
 #include <arpa/inet.h>
@@ -192,43 +193,6 @@ int write_cache(char *path) {
 
 	printf("write_cache: %s written to cache\n", path);
 	printf("write_cache: Number of entries: %u\n", new_entry_count);
-
-	return 0;
-}
-
-int version(void) {
-	printf("NEON version %s\n\n", NEON_VERSION);
-	printf("Copyright (c) 2021, 2022, 2023, 2024 Ariston Lorenzo. All rights resevred.\n");
-	return 0;
-}
-
-
-int main(int argc, char *argv[]) {
-	static char usage[] = "Usage: neon-write-cache [-dhv] <file>\n";
-	int ch;
-
-	while ((ch = getopt(argc, argv, "dhv")) != -1) {
-		switch (ch) {
-		case 'd':
-#define DEBUG
-			break;
-		case 'h':
-			printf("%s", usage);
-			break;
-		case 'v':
-			version();
-			break;
-		default:
-		case '?':
-			printf("%s", usage);
-			break;
-		}
-	}
-
-	if (argv[1] == NULL) {
-		printf("%s", usage);
-		return 1;
-	}
 
 	return 0;
 }
