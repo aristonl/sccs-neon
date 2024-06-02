@@ -29,3 +29,5 @@ A rough guide to the source tree:
     Templates for config files, etc..
  plan/
     Planning files for neon.
+ tools/quantum/
+    A planned 'neon' server solution, with a web and SSH frontend.
