@@ -17,10 +17,16 @@ buildstep() {
 }
 
 all() {
+	prep_build_dir
 	compile_objects
 	for p in $PROG; do
 		make_prog "$p"
 	done
+}
+
+prep_build_dir() {
+	mkdir -p build/obj
+	mkdir -p build/bin
 }
 
 compile_objects() {
